@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welfare Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 14px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #eaeaea;
+      border-radius: 5px;
+    }
+
+    .nav-links a.active {
+      border-bottom: 3px solid green;
+    }
+
+    .login-btn {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .hero {
+      background: url("image/child2.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .about {
+      display: flex;
+      padding: 60px 40px;
+      background-color: #f9f9f9;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 50%;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      width: 50%;
+    }
+
+    .about-text h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+    }
+
+    .support {
+      background-color: #fff;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .support h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .support-options {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .support-card {
+      background-color: #f1f1f1;
+      padding: 20px 30px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .support-card img.support-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .support-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav,
+    .footer-contact {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav h3,
+    .footer-contact h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .hero {
+        height: 80vh;
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+        padding: 10px;
+      }
+
+      .about {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .about img,
+      .about-text {
+        width: 100%;
+      }
+
+      .about-text h2 {
+        font-size: 24px;
+      }
+
+      .about-text p {
+        font-size: 16px;
+      }
+
+      .support-options {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .support-card {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+
+      .support h2 {
+        font-size: 24px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-nav,
+      .footer-contact {
+        width: 100%;
+      }
+
+      .login-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Welfare</div>
+    <div class="hamburger">&#9776;</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login / Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Join Us in Making a Difference</h1>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <img src="image/found1.avif" alt="About Us Image">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        We believe that every child deserves a fair start in life free from hunger, illness, lack of education, or basic clothing. Founded in 2025, WelfCare is a non-profit digital platform committed to improving the lives of underprivileged children across communities by addressing their most essential needs.<br><br>
+        Our mission is built around a simple but powerful vision:<br>
+        <strong>"To ensure that no child is left behind due to poverty or lack of access to basic resources."</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Support Section -->
+  <section class="support">
+    <h2>We Provide</h2>
+    <div class="support-options">
+      <div class="support-card">
+        <img src="image/food.jpg" alt="Food for Children" class="support-img" />
+        <h3>Food for Children</h3>
+        <p>Providing nutritious meals to underprivileged children across communities.</p>
+      </div>
+      <div class="support-card">
+        <img src="image/health.jpg" alt="Health Care for Children" class="support-img" />
+        <h3>Health Care for Children</h3>
+        <p>Ensuring access to essential medical services and health education.</p>
+      </div>
+      <div class="support-card">
+        <img src="image/cloths.jpg" alt="Clothes for Children" class="support-img" />
+        <h3>Clothes for Children</h3>
+        <p>Delivering warm clothing and school uniforms to children in need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact" id="contact">
+      <h3>Contact Us</h3>
+      <p>Email: ayushshukla@gmail.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Address: Lucknow, Uttar Pradesh, India</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for hamburger + active links -->
+  <script>
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a:not(.login-btn)');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Toggle menu
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Highlight active link
+    navItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navItems.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

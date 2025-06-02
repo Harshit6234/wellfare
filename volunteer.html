@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteer With Us</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+  
+    }
+    .logo {
+      font-size: 28px; font-weight: bold;
+    }
+    .nav-links {
+      display: flex; gap: 20px;
+    }
+    .nav-links a {
+      text-decoration: none; color: #333;
+      font-weight: 500; padding: 8px 14px;
+      transition: all 0.3s;
+    }
+    .nav-links a:hover {
+      background-color: #eaeaea; border-radius: 5px;
+    }
+    .login-btn {
+      background-color: white; color: black;
+      border: 2px solid black;
+      font-weight: bold; padding: 8px 16px;
+      border-radius: 5px; text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .nav-links a.active {
+      border-bottom: 3px solid green;
+    }
+
+    .login-btn:hover {
+      background-color: #f0f0f0;
+    }
+    .banner-section {
+      background-color: #f9f9f9;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .banner-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .banner-text {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .banner-text h1 {
+      font-size: 32px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .banner-section p{
+      font-weight: lighter;
+    }
+
+
+    .volunteer-section {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .volunteer-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    .submit-btn {
+      background-color: #2c662d;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #1f4d1b;
+    }
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav,
+    .footer-contact {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav h3,
+    .footer-contact h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Welfare</div>
+    <div class="nav-links">
+      <a href="index.html"class="nav-link">Home</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="volunteer.html" class="active">Volunteer</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="login.html" class="login-btn">Login / Sign Up</a>
+    </div>
+  </div>
+  <!--Banner Image-->
+  <section class="banner-section">
+    <div style="flex: 1; min-width: 250px; text-align: center;">
+      <img src="image/vol.avif" alt="Volunteer Image">
+    </div>
+    <div class="banner-text" style="flex: 1; min-width: 250px;">
+    <h1>JOIN US</h1>
+    <p>Your time and skills have the power to transform lives.
+When you lend a hand, you create hope and healing in communities. <br>
+Volunteering is not just about giving it's about growing, connecting, and inspiring change.
+Join us, and together let's build a brighter, more compassionate world.</p>
+    </div>
+  </section>
+
+  <!-- Volunteer Form -->
+  <section class="volunteer-section">
+    <h2>Become a Volunteer</h2>
+    <form id="volunteerForm">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10 digit number"/>
+      </div>
+
+      <div class="form-group">
+        <label for="availability">Availability</label>
+        <select id="availability" name="availability" required>
+          <option value="">--Select--</option>
+          <option value="Weekdays">Weekdays</option>
+          <option value="Weekends">Weekends</option>
+          <option value="Flexible">Flexible</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="skills">Skills or Interests</label>
+        <textarea id="skills" name="skills" placeholder="Tell us about your skills or areas of interest..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact" id="contact">
+      <h3>Contact Us</h3>
+      <p>Email: ayushshukla@gmail.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Address: Lucknow, Uttar Pradesh, India</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        fullname: form.fullname.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        availability: form.availability.value,
+        skills: form.skills.value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbyqOlVUa0LhCc6Qg4wgHzNYRsuoQE1CkRcZgz_AEBif9At3Es_nBuCrc9QcXhuEsouN7g/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(() => {
+        document.getElementById("successMessage").textContent = "Thank you for volunteering! We will get in touch with you soon.";
+        form.reset();
+      }).catch(() => {
+        document.getElementById("successMessage").textContent = "Oops! Something went wrong. Please try again.";
+      });
+    });
+  </script>
+
+</body>
+</html>

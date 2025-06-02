@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 14px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #eaeaea;
+      border-radius: 5px;
+    }
+
+    .nav-links a.active {
+      border-bottom: 3px solid green;
+    }
+
+    .login-btn {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .banner-section {
+      background-color: #f9f9f9;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .banner-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .banner-text {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .banner-text h1 {
+      font-size: 32px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .donate-section {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .donate-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-btn {
+      background-color: green;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: darkgreen;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+    }
+
+    #cardDetails, #upiUpload, #qrImage {
+      display: none;
+    }
+footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav,
+    .footer-contact {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav h3,
+    .footer-contact h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+    }
+
+    .footer-nav li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+
+    
+    @media (max-width: 600px) {
+      .donate-section {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .banner-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .banner-text {
+        padding: 20px 0;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-nav,
+      .footer-contact {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Welfare</div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="donate.html" class="active">Donate</a>
+      <a href="volunteer.html" class="nav-link">Volunteer</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="login.html" class="login-btn">Login / Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Banner Section -->
+  <section class="banner-section">
+    <div style="flex: 1; min-width: 250px; text-align: center;">
+      <img src="image/donate.jpg" alt="Donate Image">
+    </div>
+    <div class="banner-text" style="flex: 1; min-width: 250px;">
+      <h1>Donate For Us</h1>
+      <p>Help us make a difference by supporting children with food, clothes, and healthcare. Every contribution counts and brings hope.</p>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section class="donate-section" id="donate">
+    <h2>Make a Donation</h2>
+    <form id="donateForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="cause">Select Cause</label>
+        <select id="cause" name="cause" required>
+          <option value="">--Select--</option>
+          <option value="Food">Food for Children</option>
+          <option value="Cloth">Clothes for Children</option>
+          <option value="Healthcare">Healthcare for Children</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="">--Select--</option>
+          <option value="Card">Debit Card</option>
+          <option value="UPI">UPI QR Code</option>
+        </select>
+      </div>
+
+      <div id="cardDetails">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" name="cardNumber">
+        </div>
+        <div class="form-group">
+          <label for="cardExpiry">Expiry Date</label>
+          <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+          <label for="cardCVC">CVC</label>
+          <input type="text" id="cardCVC" name="cardCVC">
+        </div>
+      </div>
+
+      <div id="qrImage" class="form-group">
+        <label>Scan the QR to Pay</label>
+        <img src="image/Qr.jpg" alt="UPI QR Code" width="200">
+      </div>
+
+      <div class="form-group" id="upiUpload">
+        <label for="screenshot">Upload Payment Screenshot (for UPI)</label>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount (INR)</label>
+        <input type="number" id="amount" name="amount" required min="1"/>
+      </div>
+
+      <button type="submit" class="submit-btn">Donate Now</button>
+      <div class="success-message" id="successMessage"></div>
+    </form>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact" id="contact">
+      <h3>Contact Us</h3>
+      <p>Email: ayushshukla@gmail.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Address: Lucknow, Uttar Pradesh, India</p>
+    </div>
+  </footer>
+
+  <!--Script-->
+  <script>
+    document.getElementById("payment").addEventListener("change", function() {
+      const upiUpload = document.getElementById("upiUpload");
+      const qrImage = document.getElementById("qrImage");
+      const cardDetails = document.getElementById("cardDetails");
+
+      if (this.value === "UPI") {
+        upiUpload.style.display = "block";
+        qrImage.style.display = "block";
+        cardDetails.style.display = "none";
+      } else if (this.value === "Card") {
+        cardDetails.style.display = "block";
+        upiUpload.style.display = "none";
+        qrImage.style.display = "none";
+      } else {
+        upiUpload.style.display = "none";
+        qrImage.style.display = "none";
+        cardDetails.style.display = "none";
+      }
+    });
+
+    document.getElementById("donateForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        cause: form.cause.value,
+        payment: form.payment.value,
+        amount: form.amount.value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbxGfJsuPhasrMgP73eMjPmKgXs3q2uhUTlHjFmA8AFdTFwaAairqJSKmrXHwmKQSoTW/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(() => {
+        document.getElementById("successMessage").textContent = "Thank you for your donation! A confirmation email has been sent.";
+        form.reset();
+        document.getElementById("upiUpload").style.display = "none";
+        document.getElementById("qrImage").style.display = "none";
+        document.getElementById("cardDetails").style.display = "none";
+      }).catch(() => {
+        document.getElementById("successMessage").textContent = "There was an error. Please try again.";
+      });
+    });
+  </script>
+
+</body>
+</html>

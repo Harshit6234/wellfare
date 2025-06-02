@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 8px 14px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #eaeaea;
+      border-radius: 5px;
+    }
+
+    .nav-links a.active {
+      border-bottom: 3px solid green;
+    }
+     .login-btn {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+
+    /* Contact Section */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 50px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    .contact-image {
+      flex: 1;
+      min-width: 300px;
+      background: url("image/contact.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+    .container {
+      flex: 1;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #0056b3;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav,
+    .footer-contact {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav h3,
+    .footer-contact h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-nav li {
+      margin-bottom: 10px;
+    }
+
+    .footer-nav a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-contact p {
+      margin-bottom: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        flex-direction: column;
+      }
+
+      .contact-image {
+        height: 250px;
+      }
+
+      .footer-nav,
+      .footer-contact {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Welfare</div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="volunteer.html" class="nav-link">Volunteer</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html" class="login-btn">Login / Sign Up</a>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-wrapper">
+    <div class="contact-image"></div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+        <div id="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Login/login.html">Login/Signup</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: ayushshukla@gmail.com</p>
+      <p>Phone: +91 9876543210</p>
+      <p>Address: Lucknow, Uttar Pradesh, India</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contact-form");
+      const status = document.getElementById("status");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch("https://script.google.com/macros/s/AKfycbx3atq-gdjOtUkWZWBsAvV8NMGvBbdVzua6ETo1ETa53zEe4iGz1c7juIoUwYnwexJf/exec", {
+          method: "POST",
+          body: formData
+        })
+        .then(res => res.text())
+        .then(msg => {
+          status.style.color = "green";
+          status.textContent = "Message sent successfully!";
+          form.reset();
+        })
+        .catch(err => {
+          status.style.color = "red";
+          status.textContent = "Failed to send message!";
+          console.error("Error:", err);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
